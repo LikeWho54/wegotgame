@@ -4,7 +4,7 @@ import Logo from "./Logo";
 export default function Footer() {
   return (
     <footer className="w-full bg-[#0a0a0a] border-t border-white/10 py-5 px-6 lg:px-12">
-      <div className="flex items-center justify-between gap-6">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
 
         <Link href="/" className="flex items-center gap-3 shrink-0">
           <img src="/logo.png" alt="We Got Game" className="h-10 w-auto" />

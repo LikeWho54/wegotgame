@@ -21,11 +21,11 @@ export default function Navbar() {
   return (
     <nav className="relative z-50 w-full bg-[#0d0d0d] flex items-center justify-between px-6 lg:px-12 py-6 border-b border-white/10">
 
-      <Link href="/" className="flex items-center gap-3 shrink-0">
-        <img src="/logo.png" alt="We Got Game" className="h-20 w-auto" />
+      <Link href="/" className="flex items-center gap-2 lg:gap-3 shrink-0">
+        <img src="/logo.png" alt="We Got Game" className="h-12 sm:h-14 lg:h-20 w-auto" />
         <div className="flex flex-col leading-none">
-          <span className="font-anton text-white text-3xl italic tracking-wide leading-tight">WE GOT GAME</span>
-          <span className="text-brand-yellow font-bold text-[13px] tracking-[0.18em]">BASKETBALL</span>
+          <span className="font-anton text-white text-xl sm:text-2xl lg:text-3xl italic tracking-wide leading-tight">WE GOT GAME</span>
+          <span className="text-brand-yellow font-bold text-[10px] lg:text-[13px] tracking-[0.18em]">BASKETBALL</span>
         </div>
       </Link>
 

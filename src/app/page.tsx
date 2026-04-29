@@ -106,7 +106,7 @@ export default function Home() {
     <div className="flex flex-col overflow-x-hidden selection:bg-brand-yellow selection:text-black">
 
       {/* ── HERO ── */}
-      <section className="relative w-full min-h-[680px] flex flex-col justify-center">
+      <section className="relative w-full min-h-[520px] lg:min-h-[680px] flex flex-col justify-center">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1572454181157-0b40dd7667fe?q=80&w=3000&auto=format&fit=crop"
@@ -119,47 +119,47 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/20 z-10" />
         </div>
 
-        <div className="relative z-20 w-full pl-6 lg:pl-16 pr-0 py-24 flex items-center justify-between gap-8">
-          <div ref={heroTextRef} className="flex flex-col max-w-xl shrink-0">
+        <div className="relative z-20 w-full pl-6 lg:pl-16 pr-6 lg:pr-0 py-14 lg:py-24 flex items-center justify-between gap-8">
+          <div ref={heroTextRef} className="flex flex-col w-full lg:max-w-xl lg:shrink-0">
             <div className="flex flex-col leading-[0.85] mb-5">
-              <h1 className="font-barlow text-white text-[6rem] md:text-[8rem] lg:text-[10rem] italic tracking-tight drop-shadow-2xl text-grunge">
+              <h1 className="font-barlow text-white italic tracking-tight drop-shadow-2xl text-grunge text-[clamp(5rem,14vw,10rem)]">
                 WE GOT
               </h1>
-              <h1 className="font-barlow text-brand-yellow text-[6rem] md:text-[8rem] lg:text-[10rem] italic tracking-tight drop-shadow-2xl text-grunge">
+              <h1 className="font-barlow text-brand-yellow italic tracking-tight drop-shadow-2xl text-grunge text-[clamp(5rem,14vw,10rem)]">
                 GAME
               </h1>
             </div>
 
-            <p className="text-brand-yellow font-bold text-xl md:text-2xl italic tracking-wide mb-6">
+            <p className="text-brand-yellow font-bold text-base md:text-xl italic tracking-wide mb-4">
               Baschet. Încredere. Caracter. Comunitate.
             </p>
 
-            <p className="text-white/80 text-base leading-relaxed max-w-lg mb-3">
+            <p className="text-white/80 text-sm md:text-base leading-relaxed mb-3">
               We Got Game este un ecosistem sportiv pentru copii și familii, construit în jurul <span className="font-bold text-white">baschetului</span>.
             </p>
-            <p className="text-white/80 text-base leading-relaxed max-w-lg mb-6">
+            <p className="text-white/80 text-sm md:text-base leading-relaxed mb-4">
               Aici, copiii nu vin doar să învețe să arunce la coș. Vin să capete curaj, disciplină, prieteni, spirit de echipă și încrederea că pot deveni mai buni în fiecare zi.
             </p>
 
-            <p className="text-brand-yellow font-bold text-base md:text-lg mb-10">
+            <p className="text-brand-yellow font-bold text-sm md:text-base mb-8">
               Baschetul este jocul. Dezvoltarea copilului este scopul.
             </p>
 
-            <div className="flex flex-row gap-3 items-stretch">
-              <Link href="/contact" className="w-52 bg-brand-yellow text-black font-bold uppercase tracking-wider text-sm px-4 py-4 flex items-center justify-center gap-2 text-center leading-tight hover:bg-white transition-colors">
+            <div className="flex flex-col sm:flex-row gap-3 items-stretch">
+              <Link href="/contact" className="sm:w-52 bg-brand-yellow text-black font-bold uppercase tracking-wider text-sm px-4 py-4 flex items-center justify-center gap-2 text-center leading-tight hover:bg-white transition-colors">
                 <svg className="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
                 </svg>
                 ÎNSCRIE COPILUL LA PROGRAM
               </Link>
-              <Link href="/summer-school" className="w-52 border-2 border-white/50 text-white font-bold uppercase tracking-wider text-sm px-4 py-4 flex items-center justify-center gap-2 text-center leading-tight hover:bg-white hover:text-black transition-colors">
+              <Link href="/summer-school" className="sm:w-52 border-2 border-white/50 text-white font-bold uppercase tracking-wider text-sm px-4 py-4 flex items-center justify-center gap-2 text-center leading-tight hover:bg-white hover:text-black transition-colors">
                 <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <circle cx="12" cy="12" r="10" />
                   <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none" />
                 </svg>
                 VEZI SUMMER SCHOOL
               </Link>
-              <Link href="/3x3-tournament" className="w-52 border-2 border-white/50 text-white font-bold uppercase tracking-wider text-sm px-4 py-4 flex items-center justify-center gap-2 text-center leading-tight hover:bg-white hover:text-black transition-colors">
+              <Link href="/3x3-tournament" className="sm:w-52 border-2 border-white/50 text-white font-bold uppercase tracking-wider text-sm px-4 py-4 flex items-center justify-center gap-2 text-center leading-tight hover:bg-white hover:text-black transition-colors">
                 <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                   <path d="M8 21h8M12 17v4M5 3h14l-1 9H6L5 3z" />
                   <path d="M9 12s1 2 3 2 3-2 3-2" />
@@ -261,7 +261,7 @@ export default function Home() {
           {stats.map((s, i) => (
             <div key={s.label} className="relative flex flex-col items-center gap-2 py-8 px-6 text-center">
               {i < stats.length - 1 && (
-                <div className="absolute right-0 top-1/4 h-1/2 w-[3px] bg-white/30" />
+                <div className="hidden lg:block absolute right-0 top-1/4 h-1/2 w-[3px] bg-white/30" />
               )}
               <svg className="w-9 h-9 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 {s.icon}
@@ -280,10 +280,10 @@ export default function Home() {
         <div className="relative z-10 max-w-[1440px] mx-auto">
           <div className="mb-12">
             <div className="flex flex-col leading-[0.85] mb-4">
-              <h2 className="font-barlow text-white text-[4rem] md:text-[6rem] lg:text-[8rem] italic text-grunge">
+              <h2 className="font-barlow text-white text-[2.5rem] sm:text-[4rem] md:text-[6rem] lg:text-[8rem] italic text-grunge">
                 EȘTI GATA SĂ INTRI
               </h2>
-              <h2 className="font-barlow text-brand-yellow text-[4rem] md:text-[6rem] lg:text-[8rem] italic text-grunge">
+              <h2 className="font-barlow text-brand-yellow text-[2.5rem] sm:text-[4rem] md:text-[6rem] lg:text-[8rem] italic text-grunge">
                 ÎN JOC?
               </h2>
             </div>
