@@ -7,13 +7,35 @@ export const metadata: Metadata = {
   description: "O vară activă, sănătoasă și memorabilă pentru copii.",
 };
 
+const I = ({ children }: { children: React.ReactNode }) => (
+  <svg className="w-8 h-8 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">{children}</svg>
+);
+
 const benefits = [
-  { icon: "🏀", title: "Antrenamente de baschet", desc: "Adaptate nivelului fiecărui copil, de la începători la avansați." },
-  { icon: "🏆", title: "Jocuri și competiții", desc: "Concursuri organizate care dezvoltă spiritul competitiv sănătos." },
-  { icon: "⚡", title: "Coordonare și viteză", desc: "Exerciții pentru coordonare, echilibru, viteză și reacție." },
-  { icon: "🧠", title: "Dezvoltare personală", desc: "Activități prin sport care formează caracter și încredere." },
-  { icon: "🛡️", title: "Mediu sigur și organizat", desc: "Supraveghere permanentă și o atmosferă pozitivă garantată." },
-  { icon: "🤝", title: "Comunitate", desc: "Prieteni noi, echipă și amintiri care durează." },
+  {
+    icon: <I><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M5.65 5.65l12.7 12.7" /><path d="M5.65 18.35l12.7 -12.7" /><path d="M12 3a9 9 0 0 0 9 9" /><path d="M3 12a9 9 0 0 1 9 9" /></I>,
+    title: "Antrenamente de baschet", desc: "Adaptate nivelului fiecărui copil, de la începători la avansați.",
+  },
+  {
+    icon: <I><path d="M8 21l8 0" /><path d="M12 17l0 4" /><path d="M7 4l10 0" /><path d="M17 4v8a5 5 0 0 1 -10 0v-8" /><path d="M3 9a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M17 9a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /></I>,
+    title: "Jocuri și competiții", desc: "Concursuri organizate care dezvoltă spiritul competitiv sănătos.",
+  },
+  {
+    icon: <I><path d="M13 3l-7 9h6l-1 9l7-9h-6l1-9z" /></I>,
+    title: "Coordonare și viteză", desc: "Exerciții pentru coordonare, echilibru, viteză și reacție.",
+  },
+  {
+    icon: <I><path d="M15.5 13a3.5 3.5 0 0 0-3.5 3.5v1a3.5 3.5 0 0 0 7 0v-1.8" /><path d="M8.5 13a3.5 3.5 0 0 1 3.5 3.5v1a3.5 3.5 0 0 1-7 0v-1.8" /><path d="M17.5 16a3.5 3.5 0 0 0 0-7h-.5" /><path d="M19 9.3v-2.8a3.5 3.5 0 0 0-7 0" /><path d="M6.5 16a3.5 3.5 0 0 1 0-7h.5" /><path d="M5 9.3v-2.8a3.5 3.5 0 0 1 7 0v10" /></I>,
+    title: "Dezvoltare personală", desc: "Activități prin sport care formează caracter și încredere.",
+  },
+  {
+    icon: <I><path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1-8.5 15a12 12 0 0 1-8.5-15a12 12 0 0 0 8.5-3" /><path d="M12 11v5" /><path d="M12 8v.01" /></I>,
+    title: "Mediu sigur și organizat", desc: "Supraveghere permanentă și o atmosferă pozitivă garantată.",
+  },
+  {
+    icon: <I><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></I>,
+    title: "Comunitate", desc: "Prieteni noi, echipă și amintiri care durează.",
+  },
 ];
 
 export default function SummerSchool() {
@@ -104,7 +126,7 @@ export default function SummerSchool() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((b) => (
               <div key={b.title} className="bg-[#0d0d0d] border border-white/10 hover:border-brand-yellow/40 transition-colors p-8">
-                <div className="text-3xl mb-4">{b.icon}</div>
+                <div className="mb-4">{b.icon}</div>
                 <h3 className="text-white font-bold tracking-wide uppercase text-sm mb-2">{b.title}</h3>
                 <p className="text-white/55 text-sm leading-relaxed">{b.desc}</p>
               </div>

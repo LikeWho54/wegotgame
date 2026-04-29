@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 
 const programs = [
@@ -35,14 +35,27 @@ const programs = [
 const stats = [
   {
     icon: (
-      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 7a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+      <>
+        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+        <path d="M9 10l.01 0" />
+        <path d="M15 10l.01 0" />
+        <path d="M9.5 15a3.5 3.5 0 0 0 5 0" />
+        <path d="M12 3a2 2 0 0 0 0 4" />
+      </>
     ),
     number: "500+",
     label: "COPII ANTRENAȚI",
   },
   {
     icon: (
-      <path d="M8 21h8M12 17v4M5 3h14l-1 9H6L5 3zM9 12s1 2 3 2 3-2 3-2" />
+      <>
+        <path d="M8 21l8 0" />
+        <path d="M12 17l0 4" />
+        <path d="M7 4l10 0" />
+        <path d="M17 4v8a5 5 0 0 1 -10 0v-8" />
+        <path d="M3 9a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+        <path d="M17 9a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+      </>
     ),
     number: "20+",
     label: "TURNEE ORGANIZATE",
@@ -50,9 +63,11 @@ const stats = [
   {
     icon: (
       <>
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-        <path d="M2 12h20" />
+        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+        <path d="M5.65 5.65l12.7 12.7" />
+        <path d="M5.65 18.35l12.7 -12.7" />
+        <path d="M12 3a9 9 0 0 0 9 9" />
+        <path d="M3 12a9 9 0 0 1 9 9" />
       </>
     ),
     number: "7",
@@ -60,12 +75,18 @@ const stats = [
   },
   {
     icon: (
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      <>
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </>
     ),
     number: "1",
     label: "COMUNITATE UNITĂ",
   },
 ];
+
 
 export default function Home() {
   const heroTextRef = useRef(null);
@@ -98,8 +119,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/20 z-10" />
         </div>
 
-        <div className="relative z-20 w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-20">
-          <div ref={heroTextRef} className="flex flex-col max-w-2xl">
+        <div className="relative z-20 w-full pl-6 lg:pl-16 pr-0 py-24 flex items-center justify-between gap-8">
+          <div ref={heroTextRef} className="flex flex-col max-w-xl shrink-0">
             <div className="flex flex-col leading-[0.85] mb-5">
               <h1 className="font-barlow text-white text-[6rem] md:text-[8rem] lg:text-[10rem] italic tracking-tight drop-shadow-2xl text-grunge">
                 WE GOT
@@ -124,21 +145,21 @@ export default function Home() {
               Baschetul este jocul. Dezvoltarea copilului este scopul.
             </p>
 
-            <div className="flex flex-col sm:flex-row flex-wrap gap-4 items-start">
-              <Link href="/contact" className="bg-brand-yellow text-black font-bold uppercase tracking-wider text-sm px-6 py-4 flex items-center gap-2 hover:bg-white transition-colors">
+            <div className="flex flex-row gap-3 items-stretch">
+              <Link href="/contact" className="w-52 bg-brand-yellow text-black font-bold uppercase tracking-wider text-sm px-4 py-4 flex items-center justify-center gap-2 text-center leading-tight hover:bg-white transition-colors">
                 <svg className="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
                 </svg>
                 ÎNSCRIE COPILUL LA PROGRAM
               </Link>
-              <Link href="/summer-school" className="border-2 border-white/50 text-white font-bold uppercase tracking-wider text-sm px-6 py-4 flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
+              <Link href="/summer-school" className="w-52 border-2 border-white/50 text-white font-bold uppercase tracking-wider text-sm px-4 py-4 flex items-center justify-center gap-2 text-center leading-tight hover:bg-white hover:text-black transition-colors">
                 <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <circle cx="12" cy="12" r="10" />
                   <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none" />
                 </svg>
                 VEZI SUMMER SCHOOL
               </Link>
-              <Link href="/3x3-tournament" className="border-2 border-white/50 text-white font-bold uppercase tracking-wider text-sm px-6 py-4 flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
+              <Link href="/3x3-tournament" className="w-52 border-2 border-white/50 text-white font-bold uppercase tracking-wider text-sm px-4 py-4 flex items-center justify-center gap-2 text-center leading-tight hover:bg-white hover:text-black transition-colors">
                 <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                   <path d="M8 21h8M12 17v4M5 3h14l-1 9H6L5 3z" />
                   <path d="M9 12s1 2 3 2 3-2 3-2" />
@@ -147,12 +168,28 @@ export default function Home() {
               </Link>
             </div>
           </div>
+
+          {/* ── HERO VIDEO ── */}
+          <div className="hidden lg:flex flex-col gap-3 flex-1">
+            <div className="w-full max-w-[620px] mx-auto aspect-video rounded-sm overflow-hidden border border-white/20 shadow-2xl">
+              <iframe
+                src="https://www.youtube.com/embed/sYDGrRoPRs4?autoplay=0&rel=0"
+                title="We Got Game"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+            <p className="text-white/40 text-xs tracking-widest uppercase text-center">We Got Game — Highlight</p>
+          </div>
+
         </div>
       </section>
 
       {/* ── 4 PILLARS ── */}
-      <div className="w-full bg-[#111111] py-10 border-t-2 border-brand-yellow">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x divide-white/10">
+      <div className="relative w-full py-10 border-t-2 border-brand-yellow overflow-hidden">
+        <Image src="/bg.png" alt="" fill className="object-cover object-center" aria-hidden="true" />
+        <div className="relative z-10 w-full px-6 lg:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x divide-white/20">
           {[
             {
               icon: <><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></>,
@@ -187,21 +224,25 @@ export default function Home() {
       </div>
 
       {/* ── PROGRAM CARDS ── */}
-      <section className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="w-full px-4 lg:px-8 py-8 bg-black border-t border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {programs.map((prog) => (
-          <Link key={prog.title} href={prog.href} className="group relative h-[420px] flex flex-col justify-end overflow-hidden">
-            <Image
-              src={`https://images.unsplash.com/photo-${prog.img}?q=80&w=800&auto=format&fit=crop`}
-              alt={prog.title}
-              fill
-              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/10 z-10" />
-            <div className="relative z-20 p-6">
-              <h3 className="font-barlow text-white text-[1.8rem] italic leading-tight mb-2 text-grunge">
+          <Link key={prog.title} href={prog.href} className="group flex flex-col overflow-hidden border border-white/10 hover:border-white/25 transition-colors">
+            <div className="shrink-0 p-3 bg-[#0d0d0d]">
+              <div className="relative h-[220px] overflow-hidden">
+                <Image
+                  src={`https://images.unsplash.com/photo-${prog.img}?q=80&w=800&auto=format&fit=crop`}
+                  alt={prog.title}
+                  fill
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+            </div>
+            <div className="flex flex-col flex-1 p-6 bg-[#0d0d0d] items-center text-center">
+              <h3 className="font-barlow text-brand-yellow text-[2rem] italic leading-tight mb-2 text-grunge">
                 {prog.title}
               </h3>
-              <p className="text-white/65 text-sm leading-relaxed mb-5">{prog.desc}</p>
+              <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1">{prog.desc}</p>
               <span className="inline-flex items-center gap-2 border border-brand-yellow text-brand-yellow font-bold uppercase tracking-widest text-xs px-4 py-2 group-hover:bg-brand-yellow group-hover:text-black transition-colors">
                 VEZI DETALII
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
@@ -211,39 +252,41 @@ export default function Home() {
             </div>
           </Link>
         ))}
+        </div>
       </section>
 
       {/* ── STATS ── */}
-      <section className="w-full bg-black py-16 px-6 lg:px-12 relative overflow-hidden border-t border-white/10">
-        {/* Yellow paint splash bg */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-yellow/10 rounded-full blur-[80px]" />
-        </div>
-        <div className="relative max-w-[1440px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
-          {stats.map((s) => (
-            <div key={s.label} className="flex flex-col items-center gap-3">
-              <svg className="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <section className="w-full border-t-[3px] border-b-[3px] border-white/30">
+        <div className="w-full grid grid-cols-2 lg:grid-cols-4">
+          {stats.map((s, i) => (
+            <div key={s.label} className="relative flex flex-col items-center gap-2 py-8 px-6 text-center">
+              {i < stats.length - 1 && (
+                <div className="absolute right-0 top-1/4 h-1/2 w-[3px] bg-white/30" />
+              )}
+              <svg className="w-9 h-9 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 {s.icon}
               </svg>
-              <p className="font-barlow text-brand-yellow text-[3.5rem] md:text-[4.5rem] italic leading-none">
-                {s.number}
-              </p>
-              <p className="text-white/60 font-bold tracking-widest text-xs uppercase">{s.label}</p>
+              <p className="font-barlow text-brand-yellow text-[2.8rem] italic leading-none">{s.number}</p>
+              <p className="text-white/60 font-bold tracking-widest text-[11px] uppercase">{s.label}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* ── BOTTOM CTA ── */}
-      <section className="w-full bg-[#0a0a0a] py-20 px-6 lg:px-12 border-t border-white/10">
-        <div className="max-w-[1440px] mx-auto">
+      <section className="w-full relative overflow-hidden py-20 px-6 lg:px-12 border-t border-white/10">
+        <Image src="/bg.png" alt="" fill className="object-cover object-center" aria-hidden="true" />
+        <div className="absolute inset-0 bg-black/75" />
+        <div className="relative z-10 max-w-[1440px] mx-auto">
           <div className="mb-12">
-            <h2 className="font-barlow text-white text-[4rem] md:text-[6rem] lg:text-[8rem] italic leading-[0.85] text-grunge">
-              EȘTI GATA SĂ INTRI
-            </h2>
-            <h2 className="font-barlow text-brand-yellow text-[4rem] md:text-[6rem] lg:text-[8rem] italic leading-[0.85] text-grunge">
-              ÎN JOC?
-            </h2>
+            <div className="flex flex-col leading-[0.85] mb-4">
+              <h2 className="font-barlow text-white text-[4rem] md:text-[6rem] lg:text-[8rem] italic text-grunge">
+                EȘTI GATA SĂ INTRI
+              </h2>
+              <h2 className="font-barlow text-brand-yellow text-[4rem] md:text-[6rem] lg:text-[8rem] italic text-grunge">
+                ÎN JOC?
+              </h2>
+            </div>
             <p className="text-white/55 text-base mt-6 max-w-lg leading-relaxed">
               Alege programul potrivit și hai să construim împreună viitorul copilului tău.
             </p>
@@ -253,25 +296,25 @@ export default function Home() {
             {/* WhatsApp */}
             <a
               href="https://wa.me/40723123456"
-              className="bg-[#111] border border-white/10 hover:border-brand-yellow/50 transition-colors p-8 flex flex-col items-center text-center gap-4 group"
+              className="group border-t-2 border-[#25D366] bg-white/5 hover:bg-white/10 transition-colors p-6 flex items-center gap-5"
             >
-              <div className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center">
+              <div className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shrink-0">
                 <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
               </div>
               <div>
                 <p className="text-white font-bold uppercase tracking-wider text-sm">SCRIE-NE PE WHATSAPP</p>
-                <p className="text-white/40 text-xs mt-1 tracking-widest uppercase">Răspundem rapid</p>
+                <p className="text-white/45 text-xs mt-1 tracking-widest uppercase">Răspundem rapid</p>
               </div>
             </a>
 
             {/* Phone */}
             <a
               href="tel:+40723123456"
-              className="bg-[#111] border border-white/10 hover:border-brand-yellow/50 transition-colors p-8 flex flex-col items-center text-center gap-4 group"
+              className="group border-t-2 border-brand-yellow bg-white/5 hover:bg-white/10 transition-colors p-6 flex items-center gap-5"
             >
-              <div className="w-14 h-14 bg-brand-yellow rounded-full flex items-center justify-center">
+              <div className="w-14 h-14 bg-brand-yellow rounded-full flex items-center justify-center shrink-0">
                 <svg className="w-7 h-7 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
@@ -285,9 +328,9 @@ export default function Home() {
             {/* Evaluation */}
             <Link
               href="/contact"
-              className="bg-[#111] border border-white/10 hover:border-brand-yellow/50 transition-colors p-8 flex flex-col items-center text-center gap-4 group"
+              className="group border-t-2 border-white/30 bg-white/5 hover:bg-white/10 transition-colors p-6 flex items-center gap-5"
             >
-              <div className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center">
+              <div className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center shrink-0">
                 <svg className="w-7 h-7 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                   <rect x="3" y="4" width="18" height="18" rx="2" />
                   <line x1="16" y1="2" x2="16" y2="6" />
@@ -298,7 +341,7 @@ export default function Home() {
               </div>
               <div>
                 <p className="text-white font-bold uppercase tracking-wider text-sm">PROGRAMEAZĂ O EVALUARE</p>
-                <p className="text-white/40 text-xs mt-1 tracking-widest uppercase">Primul pas spre performanță</p>
+                <p className="text-white/45 text-xs mt-1 tracking-widest uppercase">Primul pas spre performanță</p>
               </div>
             </Link>
           </div>

@@ -56,8 +56,8 @@ export default function RootLayout({
         <svg className="absolute w-0 h-0 overflow-hidden" aria-hidden="true">
           <defs>
             <filter id="grunge">
-              <feTurbulence type="fractalNoise" baseFrequency="0.32" numOctaves="2" stitchTiles="stitch" result="noise" />
-              <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -6 4.5" in="noise" result="mask" />
+              <feTurbulence type="fractalNoise" baseFrequency="0.3" numOctaves="2" stitchTiles="stitch" result="noise" />
+              <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -5 3.9" in="noise" result="mask" />
               <feComposite in="SourceGraphic" in2="mask" operator="in" />
             </filter>
           </defs>

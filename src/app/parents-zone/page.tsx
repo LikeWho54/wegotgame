@@ -7,13 +7,35 @@ export const metadata: Metadata = {
   description: "Pentru părinții care vor mai mult decât o activitate sportivă.",
 };
 
+const I = ({ children }: { children: React.ReactNode }) => (
+  <svg className="w-8 h-8 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">{children}</svg>
+);
+
 const offerings = [
-  { icon: "📋", title: "Comunicare clară", desc: "Știți mereu ce se întâmplă: program, ore, locații, modificări. Fără surprize." },
-  { icon: "🗓️", title: "Program organizat", desc: "Structură clară săptămânală. Copilul știe la ce să se aștepte, părintele la fel." },
-  { icon: "📈", title: "Feedback despre progres", desc: "Vă ținem la curent cu evoluția copilului. Ce lucrăm, ce îmbunătățim, ce urmează." },
-  { icon: "🏅", title: "Evenimente sportive", desc: "Turnee, festivități, momente speciale la care familia este binevenită și implicată." },
-  { icon: "💪", title: "Wellbeing și socializare", desc: "Posibilitatea de a participa la activități de fitness, wellbeing sau socializare." },
-  { icon: "❤️", title: "Comunitate", desc: "Familii cu valori comune. Un loc unde copiii și părinții se simt acasă." },
+  {
+    icon: <I><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" /><rect x="9" y="3" width="6" height="4" rx="2" /><path d="M9 12h6" /><path d="M9 16h4" /></I>,
+    title: "Comunicare clară", desc: "Știți mereu ce se întâmplă: program, ore, locații, modificări. Fără surprize.",
+  },
+  {
+    icon: <I><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></I>,
+    title: "Program organizat", desc: "Structură clară săptămânală. Copilul știe la ce să se aștepte, părintele la fel.",
+  },
+  {
+    icon: <I><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></I>,
+    title: "Feedback despre progres", desc: "Vă ținem la curent cu evoluția copilului. Ce lucrăm, ce îmbunătățim, ce urmează.",
+  },
+  {
+    icon: <I><path d="M8 21l8 0" /><path d="M12 17l0 4" /><path d="M7 4l10 0" /><path d="M17 4v8a5 5 0 0 1-10 0v-8" /><path d="M3 9a2 2 0 1 0 4 0a2 2 0 1 0-4 0" /><path d="M17 9a2 2 0 1 0 4 0a2 2 0 1 0-4 0" /></I>,
+    title: "Evenimente sportive", desc: "Turnee, festivități, momente speciale la care familia este binevenită și implicată.",
+  },
+  {
+    icon: <I><path d="M19 5.5a4.5 4.5 0 0 0-7.47-3.37" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" /><path d="M3 10a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1z" /><path d="M12 8v4" /></I>,
+    title: "Wellbeing și socializare", desc: "Posibilitatea de a participa la activități de fitness, wellbeing sau socializare.",
+  },
+  {
+    icon: <I><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></I>,
+    title: "Comunitate", desc: "Familii cu valori comune. Un loc unde copiii și părinții se simt acasă.",
+  },
 ];
 
 export default function ParentsZone() {
@@ -70,7 +92,7 @@ export default function ParentsZone() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {offerings.map((o) => (
               <div key={o.title} className="bg-black border border-white/10 hover:border-brand-yellow/40 transition-colors p-8">
-                <div className="text-3xl mb-4">{o.icon}</div>
+                <div className="mb-4">{o.icon}</div>
                 <h3 className="text-white font-bold tracking-wide uppercase text-sm mb-2">{o.title}</h3>
                 <p className="text-white/55 text-sm leading-relaxed">{o.desc}</p>
               </div>
