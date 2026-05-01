@@ -274,10 +274,8 @@ export default function Home() {
       </section>
 
       {/* ── BOTTOM CTA ── */}
-      <section className="w-full relative overflow-hidden py-20 px-6 lg:px-12 border-t border-white/10">
-        <Image src="/bg.png" alt="" fill className="object-cover object-center" aria-hidden="true" />
-        <div className="absolute inset-0 bg-black/75" />
-        <div className="relative z-10 max-w-[1440px] mx-auto">
+      <section className="w-full bg-black py-20 px-6 lg:px-12 border-t border-white/10">
+        <div className="max-w-[1440px] mx-auto">
           <div className="mb-12">
             <div className="flex flex-col leading-[0.85] mb-4">
               <h2 className="font-barlow text-white text-[2.5rem] sm:text-[4rem] md:text-[6rem] lg:text-[8rem] italic text-grunge">
