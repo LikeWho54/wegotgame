@@ -58,7 +58,7 @@ export default function Contact() {
                 <input
                   type="email"
                   className="w-full bg-[#0d0d0d] border border-white/15 text-white px-4 py-3 text-sm focus:outline-none focus:border-brand-yellow transition-colors placeholder:text-white/25"
-                  placeholder="email@exemplu.ro"
+                  placeholder="Office@we-got-game.ro"
                 />
               </div>
 
@@ -126,7 +126,7 @@ export default function Contact() {
               <p className="text-brand-yellow font-bold tracking-[0.3em] text-xs uppercase mb-6">CONTACT RAPID</p>
               <div className="space-y-5">
                 <a
-                  href="https://wa.me/40723123456"
+                  href="https://wa.me/40720530543"
                   className="flex items-center gap-4 group"
                 >
                   <div className="w-12 h-12 bg-[#25D366] flex items-center justify-center shrink-0">
@@ -141,7 +141,7 @@ export default function Contact() {
                 </a>
 
                 <a
-                  href="tel:+40723123456"
+                  href="tel:+40720530543"
                   className="flex items-center gap-4 group"
                 >
                   <div className="w-12 h-12 bg-brand-yellow flex items-center justify-center shrink-0">
@@ -151,7 +151,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-white font-bold text-sm">SUNĂ ACUM</p>
-                    <p className="text-brand-yellow text-sm font-bold mt-0.5">0723 123 456</p>
+                    <p className="text-brand-yellow text-sm font-bold mt-0.5">0720.530.543</p>
                   </div>
                 </a>
               </div>

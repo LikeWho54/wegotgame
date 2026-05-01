@@ -293,7 +293,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {/* WhatsApp */}
             <a
-              href="https://wa.me/40723123456"
+              href="https://wa.me/40720530543"
               className="group border-t-2 border-[#25D366] bg-white/5 hover:bg-white/10 transition-colors p-6 flex items-center gap-5"
             >
               <div className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shrink-0">
@@ -309,7 +309,7 @@ export default function Home() {
 
             {/* Phone */}
             <a
-              href="tel:+40723123456"
+              href="tel:+40720530543"
               className="group border-t-2 border-brand-yellow bg-white/5 hover:bg-white/10 transition-colors p-6 flex items-center gap-5"
             >
               <div className="w-14 h-14 bg-brand-yellow rounded-full flex items-center justify-center shrink-0">
@@ -319,7 +319,7 @@ export default function Home() {
               </div>
               <div>
                 <p className="text-white font-bold uppercase tracking-wider text-sm">SUNĂ ACUM</p>
-                <p className="text-brand-yellow font-bold text-lg mt-1">0723 123 456</p>
+                <p className="text-brand-yellow font-bold text-lg mt-1">0720.530.543</p>
               </div>
             </a>
 

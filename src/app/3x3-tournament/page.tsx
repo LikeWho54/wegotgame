@@ -51,7 +51,7 @@ export default function Tournament() {
             <Link href="/contact?program=3x3" className="bg-brand-yellow text-black font-bold uppercase tracking-wider text-sm px-8 py-4 hover:bg-white transition-colors text-center">
               ÎNSCRIE ECHIPA
             </Link>
-            <a href="https://wa.me/40723123456" className="border-2 border-white/50 text-white font-bold uppercase tracking-wider text-sm px-8 py-4 hover:bg-white hover:text-black transition-colors text-center">
+            <a href="https://wa.me/40720530543" className="border-2 border-white/50 text-white font-bold uppercase tracking-wider text-sm px-8 py-4 hover:bg-white hover:text-black transition-colors text-center">
               SOLICITĂ REGULAMENTUL
             </a>
           </div>
@@ -115,7 +115,7 @@ export default function Tournament() {
               <Link href="/contact?program=3x3" className="bg-black text-white font-bold uppercase tracking-wider text-sm px-6 py-4 text-center hover:bg-white hover:text-black transition-colors">
                 ÎNSCRIE ECHIPA
               </Link>
-              <a href="https://wa.me/40723123456" className="border-2 border-black text-black font-bold uppercase tracking-wider text-sm px-6 py-4 text-center hover:bg-black hover:text-white transition-colors">
+              <a href="https://wa.me/40720530543" className="border-2 border-black text-black font-bold uppercase tracking-wider text-sm px-6 py-4 text-center hover:bg-black hover:text-white transition-colors">
                 SOLICITĂ REGULAMENTUL
               </a>
             </div>

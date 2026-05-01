@@ -63,7 +63,7 @@ export default function SummerSchool() {
             O vară activă, sănătoasă și memorabilă pentru copii.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="https://wa.me/40723123456" className="bg-brand-yellow text-black font-bold uppercase tracking-wider text-sm px-8 py-4 hover:bg-white transition-colors inline-block text-center">
+            <a href="https://wa.me/40720530543" className="bg-brand-yellow text-black font-bold uppercase tracking-wider text-sm px-8 py-4 hover:bg-white transition-colors inline-block text-center">
               VREAU DETALII PE WHATSAPP
             </a>
             <Link href="/contact" className="border-2 border-white/50 text-white font-bold uppercase tracking-wider text-sm px-8 py-4 hover:bg-white hover:text-black transition-colors text-center">
@@ -145,7 +145,7 @@ export default function SummerSchool() {
             <p className="text-black/60 text-base font-medium">Locurile sunt limitate. Rezervă acum.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <a href="https://wa.me/40723123456" className="bg-black text-white font-bold uppercase tracking-wider text-sm px-8 py-4 hover:bg-white hover:text-black transition-colors text-center">
+            <a href="https://wa.me/40720530543" className="bg-black text-white font-bold uppercase tracking-wider text-sm px-8 py-4 hover:bg-white hover:text-black transition-colors text-center">
               WHATSAPP
             </a>
             <Link href="/contact" className="border-2 border-black text-black font-bold uppercase tracking-wider text-sm px-8 py-4 hover:bg-black hover:text-white transition-colors text-center">
