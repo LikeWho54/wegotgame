@@ -32,6 +32,7 @@ export const metadata: Metadata = {
   title: "We Got Game | Basketball",
   description: "Baschet. Încredere. Caracter. Comunitate.",
   icons: {
+    icon: "/icon.svg",
     apple: "/logo.png",
   },
 };
