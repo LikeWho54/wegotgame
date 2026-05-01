@@ -35,7 +35,7 @@ export default function Footer() {
           </a>
         </div>
 
-        <p className="text-white/25 text-xs">© 2024 We Got Game. Toate drepturile rezervate.</p>
+        <p className="text-white/25 text-xs">© 2026 We Got Game. Toate drepturile rezervate.</p>
 
       </div>
     </footer>
