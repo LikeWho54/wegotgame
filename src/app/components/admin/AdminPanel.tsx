@@ -46,7 +46,7 @@ export default function AdminPanel() {
       setAdmin(null);
       if (u) {
         try {
-          setAdmin(await isAdmin(u.uid));
+          setAdmin(await isAdmin(u));
         } catch {
           setAdmin(false);
         }

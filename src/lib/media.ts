@@ -48,8 +48,13 @@ export function validateFile(file: File): string | null {
   return null;
 }
 
-export async function isAdmin(uid: string): Promise<boolean> {
-  const snap = await getDoc(doc(getDb(), "admins", uid));
+// Admin for both websites. Must match the list in firebase/*.rules.
+export const ADMIN_EMAILS = ["office@speed-basketball.ro"];
+
+/** True for the main admin email or anyone listed in the `admins` collection. */
+export async function isAdmin(user: { uid: string; email: string | null }): Promise<boolean> {
+  if (user.email && ADMIN_EMAILS.includes(user.email.toLowerCase())) return true;
+  const snap = await getDoc(doc(getDb(), "admins", user.uid));
   return snap.exists();
 }
 

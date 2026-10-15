@@ -10,7 +10,7 @@ shows its own media, while admins and the database are shared.
 | Public gallery | `/galerie` (Speed) · `/gallery` (We Got Game) |
 | Media records | Firestore collection `media` |
 | Files | Storage `media/{site}/…` |
-| Admin list | Firestore collection `admins` (document id = user UID) |
+| Admins | `office@speed-basketball.ro`, plus optional extras in Firestore `admins` (document id = user UID) |
 
 ## Project
 
@@ -30,12 +30,17 @@ Firestore, Storage and Email/Password sign-in are already enabled. Remaining:
 
    Or from a terminal: `npm i -g firebase-tools && firebase login`, then
    `cd firebase && firebase deploy --only firestore:rules,storage`.
-2. **Create admin accounts:** Authentication → Users → **Add user**
-   (email + password).
-3. **Grant admin rights:** copy the user's **User UID** from that list. In
-   Firestore → **Start collection** `admins` → Document ID = **that UID** →
-   add any field (e.g. `email` = their address) → Save. Repeat for each admin.
-   One admin list works for both websites.
+2. **Create the admin account:** Authentication → Users → **Add user** →
+   `office@speed-basketball.ro` + a password. This address is the admin for
+   both websites (set in the rules and in `src/lib/media.*`), so nothing else
+   is needed.
+3. **Turn off public sign-up:** Authentication → Settings → User actions →
+   untick **Enable create (sign-up)**. Accounts are then only created from the
+   console.
+
+   *Extra admins (optional):* add the user, copy their **User UID**, then in
+   Firestore create collection `admins` → Document ID = that UID → any field
+   (e.g. `email`) → Save.
 4. Open `/admin` on either site and sign in.
 
 The rules files are identical in both repositories; publish them once.

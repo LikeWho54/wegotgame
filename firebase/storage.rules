@@ -5,9 +5,14 @@ rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
 
+    // Main admin by email (keep in sync with ADMIN_EMAILS in src/lib/media.*),
+    // plus any extra admins listed in the Firestore `admins` collection.
     function isAdmin() {
-      return request.auth != null
-        && firestore.exists(/databases/(default)/documents/admins/$(request.auth.uid));
+      return request.auth != null && (
+        ('email' in request.auth.token
+          && request.auth.token.email.lower() in ['office@speed-basketball.ro'])
+        || firestore.exists(/databases/(default)/documents/admins/$(request.auth.uid))
+      );
     }
 
     match /media/{site}/{fileName} {

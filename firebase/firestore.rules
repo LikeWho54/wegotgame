@@ -5,9 +5,14 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
+    // Main admin by email (keep in sync with ADMIN_EMAILS in src/lib/media.*),
+    // plus any extra admins listed in the `admins` collection.
     function isAdmin() {
-      return request.auth != null
-        && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+      return request.auth != null && (
+        ('email' in request.auth.token
+          && request.auth.token.email.lower() in ['office@speed-basketball.ro'])
+        || exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
     }
 
     // Public galleries read media; only admins can add, edit or remove it.
