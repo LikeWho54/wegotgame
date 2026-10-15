@@ -12,33 +12,33 @@ shows its own media, while admins and the database are shared.
 | Files | Storage `media/{site}/…` |
 | Admin list | Firestore collection `admins` (document id = user UID) |
 
+## Project
+
+Firebase project: **`speedandwgg`**. Its web config is already in
+`src/lib/firebase.*`, so no Netlify environment variables are needed
+(`NEXT_PUBLIC_FIREBASE_*` can still override it; see `.env.example`).
+
 ## One-time setup
 
-1. **Create the project** in the [Firebase Console](https://console.firebase.google.com).
-2. **Add a Web app** (Project settings → Your apps → `</>`). Copy the config
-   values into the `NEXT_PUBLIC_FIREBASE_*` variables (see `.env.example`).
-   Set them in Netlify for **both** sites, then redeploy.
-3. **Authentication** → Sign-in method → enable **Email/Password**.
-   Then Users → **Add user** for each admin.
-4. **Firestore Database** → Create database (production mode).
-5. **Storage** → Get started. (Cloud Storage requires the Blaze pay-as-you-go
-   plan for new projects; the free usage tier still applies.)
-6. **Make someone an admin:** copy their UID from Authentication → Users, then in
-   Firestore create collection `admins` with a document whose **ID is that UID**
-   (any field, e.g. `email: "name@example.com"`).
-7. **Deploy the security rules** from this folder:
+Firestore, Storage and Email/Password sign-in are already enabled. Remaining:
 
-   ```bash
-   npm install -g firebase-tools
-   firebase login
-   cd firebase
-   firebase deploy --only firestore:rules,storage --project YOUR_PROJECT_ID
-   ```
+1. **Publish the security rules.** Until this is done, the database is either
+   locked or open to everyone, depending on how it was created.
+   - Firestore → **Rules** → paste `firestore.rules` → **Publish**.
+   - Storage → **Rules** → paste `storage.rules` → **Publish**. If the console
+     asks to let Storage rules read Firestore, accept (the admin check needs it).
 
-   Or paste `firestore.rules` and `storage.rules` into the Rules tab of
-   Firestore and Storage in the console.
+   Or from a terminal: `npm i -g firebase-tools && firebase login`, then
+   `cd firebase && firebase deploy --only firestore:rules,storage`.
+2. **Create admin accounts:** Authentication → Users → **Add user**
+   (email + password).
+3. **Grant admin rights:** copy the user's **User UID** from that list. In
+   Firestore → **Start collection** `admins` → Document ID = **that UID** →
+   add any field (e.g. `email` = their address) → Save. Repeat for each admin.
+   One admin list works for both websites.
+4. Open `/admin` on either site and sign in.
 
-The rules files are identical in both repositories; deploy them from either one.
+The rules files are identical in both repositories; publish them once.
 
 ## Limits
 
