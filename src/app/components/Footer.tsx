@@ -15,6 +15,12 @@ export default function Footer() {
         </Link>
 
         <div className="flex items-center gap-5">
+          <Link
+            href="/gallery"
+            className="text-white/60 hover:text-brand-yellow transition-colors text-xs font-bold tracking-[0.2em] uppercase"
+          >
+            Galerie
+          </Link>
           <a href="#" aria-label="Facebook" className="text-white/40 hover:text-brand-yellow transition-colors">
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
