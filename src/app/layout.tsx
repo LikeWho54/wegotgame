@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Oswald, Anton, Black_Ops_One, Barlow_Condensed } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -47,6 +48,20 @@ export default function RootLayout({
       lang="ro"
       className={`${oswald.variable} ${anton.variable} ${blackOpsOne.variable} ${barlowCondensed.variable} h-full antialiased`}
     >
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-5H6DP1RVY7"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-5H6DP1RVY7');`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-black text-white font-oswald">
         <Navbar />
         <main className="flex-1 flex flex-col">
