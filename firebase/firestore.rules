@@ -1,0 +1,30 @@
+rules_version = '2';
+
+// Shared by Speed Basketball and We Got Game (same Firebase project).
+// Keep this file identical in both repositories.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAdmin() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    // Public galleries read media; only admins can add, edit or remove it.
+    match /media/{mediaId} {
+      allow read: if true;
+      allow create: if isAdmin()
+        && request.resource.data.site in ['speed', 'wgg']
+        && request.resource.data.type in ['image', 'video']
+        && request.resource.data.createdBy == request.auth.uid;
+      allow update, delete: if isAdmin();
+    }
+
+    // Admin list is managed from the Firebase Console only.
+    // A signed-in user may check whether they themselves are an admin.
+    match /admins/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if false;
+    }
+  }
+}

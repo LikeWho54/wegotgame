@@ -4,13 +4,16 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Logo from "./Logo";
 
-const navLinks = [
+// `mobileOnly` links are left out of the desktop bar, which is already full;
+// they appear in the mobile menu (and the footer).
+const navLinks: { href: string; label: string; mobileOnly?: boolean }[] = [
   { href: "/", label: "HOME" },
   { href: "/summer-school", label: "SUMMER SCHOOL" },
   { href: "/academy", label: "ACADEMY" },
   { href: "/3x3-tournament", label: "3X3 TOURNAMENT" },
   { href: "/mental-game", label: "MENTAL GAME" },
   { href: "/parents-zone", label: "PARENTS ZONE" },
+  { href: "/gallery", label: "GALLERY", mobileOnly: true },
   { href: "/about", label: "ABOUT" },
 ];
 
@@ -30,7 +33,7 @@ export default function Navbar() {
       </Link>
 
       <div className="hidden lg:flex items-center space-x-3 xl:space-x-5 2xl:space-x-8 text-[11px] xl:text-[13px] 2xl:text-[16px] font-semibold tracking-wider xl:tracking-widest uppercase">
-        {navLinks.map((link) => (
+        {navLinks.filter((link) => !link.mobileOnly).map((link) => (
           <Link
             key={link.href}
             href={link.href}
