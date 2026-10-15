@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
+import LatestMedia from "./components/LatestMedia";
 
 const programs = [
   {
@@ -272,6 +273,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* ── LATEST GALLERY UPLOADS (hidden until something is published) ── */}
+      <LatestMedia />
 
       {/* ── BOTTOM CTA ── */}
       <section className="w-full bg-black py-20 px-6 lg:px-12 border-t border-white/10">
